@@ -4,6 +4,10 @@ import moduleForAcceptance from 'super-rentals/tests/helpers/module-for-acceptan
 moduleForAcceptance('Acceptance | list rentals');
 
 test('should show rentals as the home page', function (assert) {	
+	visit('/');
+	andThen(function() {
+		assert.equal(find('.listing').length, 3, 'should see 3 listings')
+	});
 });
 
 test('should link to information about the company.', function (assert) {
